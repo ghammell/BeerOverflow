@@ -25,6 +25,7 @@ module BeerOverflow
           '.html', '.erb', '.haml',                 # Templates
           '.png',  '.gif', '.jpg', '.jpeg',         # Images
           '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
+          '.js'
         ]
       end)
     end
