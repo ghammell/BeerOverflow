@@ -1,0 +1,17 @@
+<tr class="question">
+  <td class="vote_buttons">
+    <%= button_to '+1', upvote_question_path(question), method: :post, class: 'positive', :remote => true %>
+    <%= button_to '-1', downvote_question_path(question), method: :post, class: 'negative', :remote => true %>
+  </td>
+  <td>
+    <span class="sud_count"><%= pluralize(question.votes.sum(:value), "sud") %></span>
+  </td>
+  <td> 
+    <h3> <%= link_to question.question, question, class: :question_title %> </h3>
+    <span class="username"> by <%= " #{question.user.username}" %> </span>
+  </td>
+</tr>
+
+<tr class="spacer">
+  
+</tr>

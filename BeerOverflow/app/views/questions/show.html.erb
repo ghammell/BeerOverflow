@@ -5,7 +5,7 @@
     <col width="100">
     <col width="100%">
     
-    <tr class="question_title">
+    <tr class="show_question_title">
       <td class="vote_buttons">
           <%= button_to '+1', upvote_question_path(@question), method: :post, class: 'positive', :remote => true %>
           <%= button_to '-1', downvote_question_path(@question), method: :post, class: 'negative', :remote => true %>
@@ -14,8 +14,8 @@
         <span class="sud_count"><%= pluralize(@question.votes.sum(:value), "sud") %></span>
       </td>
       <td>
-        <h1> <%= @question.question %> </h1>
-        <span class="username"> by <%= " #{@question.user.username}" %> </span>
+        <h1 class="question_title"> <%= @question.question %> </h1>
+        <span class="username"> by <%= @question.user.username %> </span>
       </td>
       <% if session[:user_id] == @question.user_id %>
         <td class="update">

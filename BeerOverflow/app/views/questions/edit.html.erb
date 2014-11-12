@@ -1,4 +1,10 @@
-<%= form_for @question do |f| %>
-  <%= f.text_field :question, placeholder: @question.question %>
-  <%= f.submit "update question" %>
-<% end %>
+<div class="show_container">
+  <div class="preview">
+    question preview  
+  </div>
+  
+  <%= form_for @question do |f| %>
+    <%= f.text_area :question, class: :input, placeholder: @question.question %>
+    <%= f.submit "update question" %>
+  <% end %>
+</div>

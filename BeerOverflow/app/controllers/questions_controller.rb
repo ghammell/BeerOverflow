@@ -2,6 +2,8 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.order(created_at: :desc)
+    @question_yes = Question.last
+    @question = Question.new
   end
 
   def show
@@ -23,7 +25,7 @@ class QuestionsController < ApplicationController
     else
       flash[:alert] = "You must be logged in to use that function."
     end
-    redirect_to root_path
+    render partial: 'question', locals: {question: @question}
   end
 
   def edit

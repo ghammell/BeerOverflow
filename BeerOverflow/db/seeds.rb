@@ -19,7 +19,7 @@ def seed
   end
   
   Comment.all.each do |comment|
-    (rand(100)+1).times {comment.votes.create(user_id: rand(5)+1, value: [1, -1].sample)}
+    (rand(10)+1).times {comment.votes.create(user_id: rand(5)+1, value: [1, -1].sample)}
   end
 end
 
